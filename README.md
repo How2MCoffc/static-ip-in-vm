@@ -10,6 +10,10 @@ Open the Netplan configuration file using a text editor (e.g., nano):
 
 ```bash
 sudo nano /etc/netplan/01-netcfg.yaml
+```
+
+### Step 2: Modify the Configuration File
+```
 network:
   version: 2
   renderer: networkd
@@ -20,5 +24,13 @@ network:
       gateway4: <gateway_ip>
       nameservers:
         addresses: [<dns_server_ip1>, <dns_server_ip2>]
+```
+### Step 3: Save and Apply the Configuration
+```
 sudo netplan apply
+```
+### Step 4: Restart the Network Service
+```
 sudo systemctl restart systemd-networkd
+```
+Now, your Ubuntu system is configured with a static IP address. Ensure the accuracy of the provided information and adapt the configuration to your specific network setup.
